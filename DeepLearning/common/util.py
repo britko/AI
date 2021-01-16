@@ -16,6 +16,7 @@ def smooth_curve(x):
 
 def shuffle_dataset(x, t):
     """데이터셋을 뒤섞는다.
+
     Parameters
     ----------
     x : 훈련 데이터
