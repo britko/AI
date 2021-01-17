@@ -1,7 +1,7 @@
 # coding: utf-8
 # 
 import sys, os
-sys.path.append(r'C:\Users\pc\Desktop\고영국\개발\파이썬 실습코드\DeepLearning')
+sys.path.append(r'C:\Users\pc\Desktop\고영국\개발\인공지능\DeepLearning')
 import numpy as np
 from dataset.mnist import load_mnist
 from two_layer_net import TwoLayerNet

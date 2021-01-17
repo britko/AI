@@ -1,7 +1,7 @@
 # coding: utf-8
 # 기울기 확인: 수치 미분의 결과와 오차역전파법의 결과를 비교하여 오차역전파법을 제대로 구현했는지 검증한다.
 import sys, os
-sys.path.append(r'C:\Users\pc\Desktop\고영국\개발\파이썬 실습코드\DeepLearning')  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
+sys.path.append(r'C:\Users\pc\Desktop\고영국\개발\인공지능\DeepLearning')  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
 import numpy as np
 from dataset.mnist import load_mnist
 from two_layer_net import TwoLayerNet
