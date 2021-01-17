@@ -1,4 +1,5 @@
 # coding: utf-8
+# 
 import sys, os
 sys.path.append(r'C:\Users\pc\Desktop\고영국\개발\파이썬 실습코드\DeepLearning')
 import numpy as np
