@@ -2,7 +2,7 @@
 import os
 import sys
 
-sys.path.append(r'C:\Users\pc\Desktop\고영국\개발\인공지능\DeepLearning')  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
+sys.path.append(r'C:\Users\pc\Desktop\고영국\개발\AI\DeepLearning')  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
 import numpy as np
 import matplotlib.pyplot as plt
 from dataset.mnist import load_mnist
