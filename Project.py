@@ -3,6 +3,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import cv2
 from matplotlib.image import imread
 
 from sklearn.metrics import classification_report,confusion_matrix
@@ -12,6 +13,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Activation, Dropout, Flatten, Dense, Conv2D, MaxPool2D
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.preprocessing import image
 
 import warnings
 warnings.filterwarnings('ignore')
