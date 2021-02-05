@@ -140,7 +140,7 @@ model.compile(loss='categorical_crossentropy', # 손실함수 설정
               metrics=['accuracy']) # 훈련 모니터링
 
 
-model.summary() # 모델 구조 확인
+# model.summary() # 모델 구조 확인
 
 #####################################################################################################################
 # import tensorflow as tf
@@ -152,7 +152,7 @@ from keras.callbacks import ModelCheckpoint
 #     tf.keras.callbacks.TensorBoard(log_dir=r'C:/Users/pc/Jupyter Notebook/logs'),
 # ]
 
-filename = r'C:/Users/pc/Jupyter Notebook/savemodel/checkpoint-{epoch:02d}-{val_loss:.2f}.h5' # 가중치를 저장할 파일
+filename = r'C:/Users/pc/Jupyter Notebook/savemodel/checkpoint-{epoch:02d}-loss{val_loss:.2f}-acc{val_accuracy:.2f}.h5' # 가중치를 저장할 파일
 checkpoint = ModelCheckpoint(filename,             # file명을 지정합니다
                              monitor='val_loss',   # val_loss 값이 개선되었을때 호출됩니다
                              verbose=1,            # 로그를 출력합니다
