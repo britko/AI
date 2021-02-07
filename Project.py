@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report,confusion_matrix # 머신러�
 
 from tensorflow.keras.preprocessing.image import ImageDataGenerator # 데이터 증강
 from tensorflow.keras.models import Sequential # sequential 모델: 계층을 선형으로 쌓음
-from tensorflow.keras.layers import Activation, Dropout, Flatten, Dense, Conv2D, MaxPool2D
+from tensorflow.keras.layers import Activation, Dropout, Flatten, Dense, Conv2D, MaxPool2D, InputLayer
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.optimizers import Adam # 매개변수 갱신 방법 Adam
 from tensorflow.keras.preprocessing import image
@@ -110,6 +110,7 @@ img_shape=(64,65,4)
 ## 학습 모델 CNN
 model = Sequential()
 
+model.add(InputLayer(input_shape=(64, 65, 4)))
 model.add(Conv2D(filters=32, kernel_size=(4,4),input_shape=img_shape, activation='relu',))
 model.add(MaxPool2D(pool_size=(2, 2)))
 ## FIRST SET OF LAYERS
@@ -163,16 +164,16 @@ checkpoint = ModelCheckpoint(filename,             # file명을 지정합니다
 ## flow_from_directory: 제너레이팅한 이미지를 폴더명에 맞춰 자동으로 레이블링
 train_image_gen = image_gen.flow_from_directory(train_path,
                                                target_size=img_shape[:2], # 패치 이미지 크기를 지정
-                                                color_mode='rgba', # 적 녹 청 투명도
+                                               color_mode='rgba', # 적 녹 청 투명도
                                                batch_size=batch_size,
                                                class_mode='categorical') # 분류방식 - 2D one-hot coding된 라벨이 반환됨
 
 test_image_gen = image_gen.flow_from_directory(test_path,
                                                target_size=img_shape[:2],
-                                                color_mode='rgba',
+                                               color_mode='rgba',
                                                batch_size=batch_size,
                                                class_mode='categorical',
-                                              shuffle=False)
+                                               shuffle=False)
 
 
 results = model.fit_generator( # fit_generator: generator를 사용해 데이터를 계속 주면서 학습
