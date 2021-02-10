@@ -3,8 +3,6 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 from tensorflow.keras.callbacks import ModelCheckpoint
 
-rootPath = 'C:/Users/pc/Jupyter Notebook/WaferMap'
-
 imageGenerator = ImageDataGenerator(
     rescale=1./255,
     rotation_range=20,
@@ -66,15 +64,13 @@ model.compile(
     metrics=['accuracy'],
 )
 
-
-filename = r'C:/Users/pc/Jupyter Notebook/savemodel/checkpoint_v2-{epoch:02d}-{val_loss:.2f}-{val_accuracy:.2f}.h5' # 가중치를 저장할 파일
+filename = 'C:/Users/pc/Jupyter Notebook/savemodel/checkpoint_v2-{epoch:02d}-{val_loss:.2f}-{val_accuracy:.2f}.h5' # 가중치를 저장할 파일
 checkpoint = ModelCheckpoint(filename,             # file명을 지정합니다
                              monitor='val_loss',   # val_loss 값이 개선되었을때 호출됩니다
                              verbose=1,            # 로그를 출력합니다
                              save_best_only=True,  # 가장 best 값만 저장합니다
                              mode='auto'           # auto는 알아서 best를 찾습니다. min/max
                             )
-
 
 history = model.fit(
     trainGen,
