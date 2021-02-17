@@ -59,4 +59,4 @@ def class_img(test_img):
 
 
 # 분류!!!
-class_img("Random_74")
+class_img("Scratch_219")
